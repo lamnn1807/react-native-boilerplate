@@ -1,5 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+// import createSagaMiddleware from 'redux-saga'
 import { persistReducer, persistStore } from 'redux-persist'
 
 /**
@@ -28,9 +28,9 @@ export default (rootReducer, rootSaga) => {
   const middleware = []
   const enhancers = []
 
-  // Connect the sagas to the redux store
-  const sagaMiddleware = createSagaMiddleware()
-  middleware.push(sagaMiddleware)
+  // // Connect the sagas to the redux store
+  // const sagaMiddleware = createSagaMiddleware()
+  // middleware.push(sagaMiddleware)
 
   enhancers.push(applyMiddleware(...middleware))
 
@@ -40,8 +40,8 @@ export default (rootReducer, rootSaga) => {
   const store = createStore(persistedReducer, compose(...enhancers))
   const persistor = persistStore(store)
 
-  // Kick off the root saga
-  sagaMiddleware.run(rootSaga)
+  // // Kick off the root saga
+  // sagaMiddleware.run(rootSaga)
 
   return { store, persistor }
 }
