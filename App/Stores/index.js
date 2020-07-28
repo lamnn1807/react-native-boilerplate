@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import configureStore from './CreateStore'
-import { reducer as ExampleReducer } from './Example/Reducers'
+import { reducer as AppReducer } from './Startup/Reducers'
 
 export default () => {
   const rootReducer = combineReducers({
@@ -8,7 +8,7 @@ export default () => {
      * Register your reducers here.
      * @see https://redux.js.org/api-reference/combinereducers
      */
-    example: ExampleReducer,
+    app: AppReducer,
   })
 
   return configureStore(rootReducer)
