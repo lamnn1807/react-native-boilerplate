@@ -1,9 +1,17 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import styles from './SplashScreenStyle'
+import styles from './styles'
 import { Helpers } from 'App/Theme'
+import NavigationService from 'App/Services/NavigationService'
 
 export default class SplashScreen extends React.Component {
+
+  async componentDidMount() {
+    setTimeout(() => {
+      NavigationService.navigateAndReset('LoginScreen')
+    }, 5000)
+  }
+
   render() {
     return (
       <View style={[Helpers.fillRowCenter, styles.container]}>
