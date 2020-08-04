@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CommonActions } from '@react-navigation/native'
+import { CommonActions, DrawerActions } from '@react-navigation/native'
 export const navigationRef = React.createRef();
 
 /**
@@ -31,7 +31,12 @@ function navigateAndReset(routeName, params) {
   )
 }
 
+function toggleDrawer() {
+  navigationRef.current.dispatch(DrawerActions.toggleDrawer());
+}
+
 export default {
   navigate,
   navigateAndReset,
+  toggleDrawer
 }
