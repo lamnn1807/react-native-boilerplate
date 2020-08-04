@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import { StartupTime } from 'react-native-startup-time'
 import styles from './styles'
 import { Helpers } from 'App/Theme'
 import NavigationService from 'App/Services/NavigationService'
@@ -19,6 +20,7 @@ export default class SplashScreen extends React.Component {
           {/* You will probably want to insert your logo here */}
           <Text>LOGO</Text>
         </View>
+        <StartupTime />
       </View>
     )
   }
