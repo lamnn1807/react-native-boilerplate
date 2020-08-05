@@ -4,10 +4,12 @@ import { StartupTime } from 'react-native-startup-time'
 import styles from './styles'
 import { Helpers } from 'App/Theme'
 import NavigationService from 'App/Services/NavigationService'
+import RNBootSplash from "react-native-bootsplash"
 
 export default class SplashScreen extends React.Component {
 
   async componentDidMount() {
+    RNBootSplash.hide()
     setTimeout(() => {
       NavigationService.navigateAndReset('MainScreen')
     }, 1000)
