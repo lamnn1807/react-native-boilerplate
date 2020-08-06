@@ -11,7 +11,7 @@ export default class SplashScreen extends React.Component {
   async componentDidMount() {
     RNBootSplash.hide()
     setTimeout(() => {
-      NavigationService.navigateAndReset('MainScreen')
+      NavigationService.navigateAndReset('AuthNavigator')
     }, 1000)
   }
 
