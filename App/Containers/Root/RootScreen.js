@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import StartupActions from 'App/Stores/Startup/Actions'
 import { PropTypes } from 'prop-types'
 import { Helpers } from 'App/Theme'
+import ErrorBoundary from 'App/Components/ErrorBoundary'
+
 
 class RootScreen extends Component {
   componentDidMount() {
@@ -15,7 +17,9 @@ class RootScreen extends Component {
   render() {
     return (
       <View style={Helpers.fill}>
-        <AppNavigator/>
+        <ErrorBoundary>
+          <AppNavigator/>
+        </ErrorBoundary>
       </View>
     )
   }
