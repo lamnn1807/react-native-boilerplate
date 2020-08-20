@@ -1,6 +1,6 @@
-import * as React from 'react';
 import { CommonActions, DrawerActions } from '@react-navigation/native'
-export const navigationRef = React.createRef();
+
+import { navigationRef } from 'App/Navigators/AppNavigator'
 
 /**
  * Call this function when you want to navigate to a specific route.
@@ -35,8 +35,13 @@ function toggleDrawer() {
   navigationRef.current.dispatch(DrawerActions.toggleDrawer());
 }
 
+function goBack() {
+  navigationRef.current.dispatch(CommonActions.goBack());
+}
+
 export default {
   navigate,
   navigateAndReset,
-  toggleDrawer
+  toggleDrawer,
+  goBack,
 }
