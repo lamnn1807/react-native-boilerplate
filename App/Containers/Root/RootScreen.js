@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import AppNavigator from 'App/Navigators/AppNavigator'
 import { View } from 'react-native'
-import { connect } from 'react-redux'
-import StartupActions from 'App/Stores/Startup/Actions'
 import { PropTypes } from 'prop-types'
 import { Helpers } from 'App/Theme'
 import ErrorBoundary from 'App/Components/ErrorBoundary'
@@ -10,8 +8,6 @@ import ErrorBoundary from 'App/Components/ErrorBoundary'
 
 class RootScreen extends Component {
   componentDidMount() {
-    // Run the startup saga when the application is starting
-    this.props.startup()
   }
 
   render() {
@@ -26,16 +22,7 @@ class RootScreen extends Component {
 }
 
 RootScreen.propTypes = {
-  startup: PropTypes.func,
 }
 
-const mapStateToProps = (state) => ({})
 
-const mapDispatchToProps = (dispatch) => ({
-  startup: () => dispatch(StartupActions.startup()),
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RootScreen)
+export default RootScreen
